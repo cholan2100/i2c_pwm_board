@@ -177,9 +177,9 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <linux/i2c-dev.h>
-extern "C" {
-    #include <i2c/smbus.h>
-}
+// extern "C" {
+    // #include <i2c/smbus.h>
+// }
 
 #include <ros/ros.h>
 #include <ros/console.h>
@@ -586,10 +586,19 @@ static void _set_pwm_interval_proportional (int servo, float value)
 	servo_config* configp = &(_servo_configs[servo-1]);
 	
 	if ((configp->center < 0) ||(configp->range < 0)) {
-		ROS_ERROR("Missing servo configuration for servo[%d]", servo);
+// ROS_ERROR("Missing servo configuration for servo[%d]", servo);
 		return;
 	}
 
+#if 0
+	if(		
+		servo == 10 || servo == 11 || servo == 12	// LF
+		|| 	servo == 4 || servo == 25 || servo == 6	// LB
+		|| 	servo == 1 || servo == 22 || servo == 3	// RB
+		|| 	servo == 7 || servo == 8 || servo == 9 	// RF
+		)
+		return;
+#endif // 0
 	int pos = (configp->direction * (((float)(configp->range) / 2) * value)) + configp->center;
         
 	if ((pos < 0) || (pos > 4096)) {
@@ -881,6 +890,10 @@ void servos_proportional (const i2cpwm_board::ServoArray::ConstPtr& msg)
     for(std::vector<i2cpwm_board::Servo>::const_iterator sp = msg->servos.begin(); sp != msg->servos.end(); ++sp) {
         int servo = sp->servo;
         float value = sp->value;
+
+		// if(!(servo == 10 || servo == 11 || servo == 12))
+			// continue; // skip others
+
 		_set_pwm_interval_proportional (servo, value);
     }
 }

@@ -13,15 +13,18 @@ servo_max_angle_deg: 82.5
 # - D: duty cycle
 # - f: PWM frequency (50 Hz)
 #
-RF_3: {num: 1,  center: 306, range: 312, direction: -1, center_angle_deg:  -90.0}
-RF_2: {num: 2,  center: 306, range: 330, direction: -1, center_angle_deg:   -8.5}
-RF_1: {num: 3,  center: 306, range: 440, direction: -1, center_angle_deg:   11.3}
-RB_3: {num: 4,  center: 306, range: 295, direction: -1, center_angle_deg: -102.9}
-RB_2: {num: 5,  center: 306, range: 350, direction: -1, center_angle_deg:   -4.7}
-RB_1: {num: 6,  center: 306, range: 216, direction: -1, center_angle_deg:   -0.8}
-LB_3: {num: 7,  center: 306, range: 330, direction: -1, center_angle_deg:   60.0}
-LB_2: {num: 8,  center: 306, range: 337, direction: -1, center_angle_deg:    0.0}
-LB_1: {num: 9,  center: 306, range: 297, direction: -1, center_angle_deg:  -16.7}
-LF_3: {num: 10, center: 306, range: 348, direction: -1, center_angle_deg:   32.2}
-LF_2: {num: 11, center: 306, range: 312, direction: -1, center_angle_deg:  -10.6}
-LF_1: {num: 12, center: 306, range: 367, direction: -1, center_angle_deg:  -13.5}
+RF_3: {num: 9,  center: 324, range: 269.5, direction: 1, center_angle_deg:  89.39}
+RF_2: {num: 8,  center: 314, range: 403.3, direction: 1, center_angle_deg:   0}
+RF_1: {num: 7,  center: 306, range: 374, direction: -1, center_angle_deg:   4.41}
+
+RB_3: {num: 3,  center: 306, range: 385, direction: 1, center_angle_deg: 91.29} # low
+RB_2: {num: 2,  center: 306, range: 381.3, direction: 1, center_angle_deg:   -37.21} #high
+
+RB_1: {num: 1,  center: 306, range: 381.3, direction: 1, center_angle_deg:   -3.46} #hip
+
+LB_3: {num: 6,  center: 306, range: 385, direction: 1, center_angle_deg:   -94.29}
+LB_2: {num: 5,  center: 306, range: 403.3, direction: 1, center_angle_deg:    91.23}
+LB_1: {num: 4,  center: 306, range: 381.3, direction: -1, center_angle_deg:  -6.92}
+LF_3: {num: 12, center: 306, range: 394.2, direction: 1, center_angle_deg:   -85.4}
+LF_2: {num: 11, center: 306, range: 403.3, direction: 1, center_angle_deg:  85.91}
+LF_1: {num: 10, center: 306, range: 385, direction: 1, center_angle_deg:  4.29}
